@@ -1,0 +1,115 @@
+/*===== Erster Lösung mit grid-column und grid-row====*/
+/*
+* {
+    margin: 0;
+    padding: 0;
+    
+    }
+
+    .rot {
+        background-color: red;
+
+    } 
+    .blau {
+        background-color: blue;
+    }
+    .gruen {
+        background-color: green;
+    }
+    .violett {
+        background-color: violet;
+    }
+    .gelb {
+         background-color: yellow;
+    }
+
+        body {
+            height: 100vh;
+        }
+
+    section {
+        display: grid;
+        gap: 10px; 
+        border-radius: 5px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        margin: 0 2rem;
+    }
+
+    .rot, .blau, .gelb, .violett, .gruen {
+        padding: 2rem;
+        border-radius: 5px;
+    } 
+    /*  */
+   /* .rot {
+        grid-column: 1/4;
+    }
+    .blau {
+        grid-column: 4/7;
+    }
+    
+    .gruen {
+        grid-column: 1/3;
+    }
+    .violett {
+        grid-column: 3/7;
+    } 
+     .gelb {
+        grid-column: 1/7;
+    } 
+    div {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px; }*/
+    
+        
+
+    /*======== Zweiter Lösungsweg ============
+     ========== mit grid-areas ========= */
+
+     * {
+        margin: 0;
+        padding: 0;
+        
+        }
+
+section {
+    display: grid;
+    gap: 10px; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 100px; 
+        grid-template-areas: 
+        " rot rot rot blau blau blau"
+        "gruen gruen gruen violett violett violett "
+        "gelb gelb gelb gelb gelb gelb";
+    }    
+
+    div {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px; }
+    
+    .rot {
+        background-color: red;
+       grid-area: rot;
+    }
+
+    .blau {
+        background-color: blue;
+       grid-area: blau; 
+    }
+
+    .gruen {
+        background-color: green;
+       grid-area: gruen;
+    }
+    .violett {
+        background-color: violet;
+        grid-area: violett; 
+    }
+
+    .gelb {
+        background-color: yellow;
+        grid-area: gelb; 
+    } 
